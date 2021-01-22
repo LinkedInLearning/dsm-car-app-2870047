@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Evaluation</title>
+ </head>
+<body>
+        <h2>Welcome to Car Evaluation App</h2>
+        <h3>Enter your car info</h3>
+        <form name="carform" id="carform" action = "{{ url_for('carclassify') }}" method="POST">
+            <table border="1" style="border-color:gray; border-collapse:collapse;" cellpadding="5" cellspacing="5">
+                <tr>
+                    <td><p>Buying Price </p>
+                        <select name = "buying">
+                            <option value="vhigh">Very high</option>
+                            <option value="high">High</option>
+                            <option value="med">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </td>
+                    <td><p>Maintenance Price </p>
+                        <select name = "maint">
+                            <option value="vhigh">Very high</option>
+                            <option value="high">High</option>
+                            <option value="med">Medium</option>
+                            <option value="low">Low</option>
+                        </select>
+                    </td>
+                    <td><p>Number of doors </p>
+                        <select name = "doors">
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5-more">5-more</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Number of persons </p>
+                        <select name = "persons">
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="more">more</option>
+                        </select>
+                    </td>
+                    <td><p>Luggage boot size </p>
+                        <select name = "lug_boot">
+                            <option value="small">Small</option>
+                            <option value="med">Medium</option>
+                            <option value="big">Big</option>
+                        </select>
+                    </td>
+                    <td><p>Estimated safety </p>
+                        <select name = "safety">
+                            <option value="low">Low</option>
+                            <option value="med">Medium</option>
+                            <option value="high">High</option>
+                        </select>    
+                    </td>         
+                </tr>
+            </table>
+            <input type="hidden" id="forminput" name="forminput"  >            
+            <p><input type="submit" value="Evaluate my car"></p>
+             {% if (results) %} 
+             <h3> Car evaluation: {{ results }}  </h3>
+             <p> for following features: </p>
+             <p> buying: {{buying}} </p>
+             <p> maint: {{maint}} </p>
+             <p> doors: {{doors}}</p>
+             <p> persons: {{persons}} </p>
+             <p> safety: {{safety}} </p>
+             {% endif %} 
+        </form>
+</body>
+</html>
