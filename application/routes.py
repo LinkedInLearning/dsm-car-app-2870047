@@ -28,7 +28,8 @@ def carclassify():
     input_data = json.dumps({"buying": buying, "maint": maint, "doors": doors, "persons": persons, "lug_boot": lug_boot, "safety": safety})
 
     #url for car classification api
-    url = "http://localhost:5000/api"
+    #url = "http://localhost:5000/api"
+    url = "https://dsm-car-model.herokuapp.com/api"
 
  
     #post data to url
